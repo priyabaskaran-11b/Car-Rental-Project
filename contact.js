@@ -1,4 +1,4 @@
-// Hamburger menu toggle functionality
+// menu toggle functionality
 const menuToggle = document.getElementById('menuToggle');
 const nav = document.querySelector('.navbar nav');
 
