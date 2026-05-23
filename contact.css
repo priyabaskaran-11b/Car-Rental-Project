@@ -34,6 +34,10 @@ body {
     margin-right: 8px;
 }
 
+.navbar .logo i {
+    margin-right: 10px; 
+}
+
 .navbar nav {
     flex: 1;
     display: flex;
@@ -113,68 +117,13 @@ body {
     height: auto;
 }
 
-/* FOOTER STYLES */
-.footer {
-    background-color: black;
-    color: white;
-    padding: 50px 30px 20px;
-    margin-top: 60px;
-}
-
-.footer-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto 30px;
-}
-
-.footer-section {
-    padding: 0;
-}
-
-.footer-section h3 {
-    font-size: 18px;
-    margin-bottom: 20px;
-    color: #FF4500;
-    font-weight: 700;
-}
-
-.footer-section ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.footer-section ul li {
-    margin-bottom: 12px;
-    font-size: 14px;
-}
-
-.footer-section a {
-    color: #ecf0f1;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-section a:hover {
-    color: #FF4500;
-}
-
-.footer-bottom {
-    text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 20px;
-    font-size: 14px;
-    color: #bdc3c7;
-}
+/* Hero section */
 
 .container {
     max-width: 1000px;
     margin: 0 auto;
     padding: 60px 20px;
 }
-
 
 .hero {
     position: relative;
@@ -191,7 +140,6 @@ body {
     overflow: hidden;
 }
 
-/* overlay */
 .hero::before {
     content: '';
     position: absolute;
@@ -199,20 +147,17 @@ body {
     background: rgba(0,0,0,0.4);
 }
 
-/* text container */
 .hero-content {
     position: relative;
     z-index: 2;
 }
 
-/* Container & Layout */
 .content-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
 }
 
-/* Form Section */
 .form-section h2,
 .info-section h2 {
     font-size: 28px;
@@ -309,8 +254,7 @@ body {
     margin-bottom: 20px;
     border: none;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
 .info-box h3 {
@@ -324,14 +268,107 @@ body {
     font-size: 14px;
 }
 
-.info-box:hover {
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-    transform: translateY(-4px);
+/* FOOTER STYLES */
+.footer {
+    background-color: black;
+    color: white;
+    padding: 50px 30px 20px;
+    margin-top: 60px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto 30px;
+}
+
+.footer-section {
+    padding: 0;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #faf9f8;
+    font-weight: 700;
+}
+
+.footer-section ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 12px;
+    font-size: 14px;
+    margin-right: 10px;
+    color: #ecf0f1;
+}
+
+.footer-section a {
+    color: #ecf0f1;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #faf9f8;
+}
+
+.footer-logo {
+    font-size: 38px;
+    font-weight: 700;
+    color: #faf9f8;
+    margin-bottom: 10px;
+}
+
+.footer-logo i {
+    margin-right: 10px; 
+}
+
+.footer-desc {
+    font-size: 14px;
+    color: #ecf0f1;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Social icons */
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons a {
+    width: 40px;
+    height: 40px;
+    background-color: #222;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;   
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    background-color: #FF6600;
+    transform: scale(1.1);
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    font-size: 14px;
+    color: #bdc3c7;
 }
 
 /* Responsive Design */
-
-/* Tablet Design - 768px and below */
 @media (max-width: 768px) {
     .navbar {
         padding: 12px 20px;
