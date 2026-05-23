@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>DriveNow - browsecars Cars</title>
+
+    <!-- GOOGLE FONT -->
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+        href="browsecars.css">
+
+</head>
+
+<body id="body">
+
+
+    <!-- ================= LOADER ================= -->
+
+    <div class="loader"
+        id="loader">
+
+        <div class="spinner"></div>
+
+    </div>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+
+        <!-- LOGO -->
+
+        <div class="logo-section">
+
+            <div class="logo">
+
+                <i class="fa-solid fa-car-side"></i>
+
+                <h2>DriveNow</h2>
+
+            </div>
+
+
+            <!-- LIVE TIME -->
+
+            <div class="live-time"
+                id="liveTime">
+
+                10:45 PM
+
+            </div>
+
+        </div>
+
+
+        <!-- NAV ACTIONS -->
+
+        <div class="nav-actions">
+
+
+            <!-- FAVORITE COUNT -->
+
+            <div class="favorite-count">
+
+                <i class="fa-solid fa-heart"></i>
+
+                <span id="favCount">
+
+                    0
+
+                </span>
+
+            </div>
+
+
+            <!-- DARK MODE -->
+
+            <button class="dark-mode-btn"
+                id="darkModeBtn">
+
+                <i class="fa-solid fa-moon"></i>
+
+            </button>
+
+
+            <!-- MENU -->
+
+            <div class="menu-icon"
+                id="menuBtn">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= MOBILE MENU ================= -->
+
+    <div class="mobile-menu"
+        id="mobileMenu">
+
+        <div class="close-menu"
+            id="closeMenu">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </div>
+
+        <a href="#">Home</a>
+
+        <a href="#">browsecars Cars</a>
+
+        <a href="#">About</a>
+
+        <a href="#">Contact</a>
+
+    </div>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="container">
+
+
+        <!-- ================= HEADING ================= -->
+
+        <section class="heading-section">
+
+            <h1>
+
+                browsecars Our Fleet
+
+            </h1>
+
+            <p>
+
+                Discover the perfect vehicle
+                for your journey
+
+            </p>
+
+        </section>
+
+
+        <!-- ================= SEARCH ================= -->
+
+        <div class="search-box">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input type="text"
+                id="searchInput"
+                placeholder="Search by car name or brand...">
+
+        </div>
+
+
+        <!-- SEARCH SUGGESTIONS -->
+
+        <div class="search-suggestions"
+            id="searchSuggestions">
+
+        </div>
+
+
+        <!-- ================= SORT ================= -->
+
+        <div class="sort-container">
+
+            <button class="sort-btn"
+                id="sortBtn">
+
+                <span id="selectedSort">
+
+                    Featured
+
+                </span>
+
+                <i class="fa-solid fa-angle-down"></i>
+
+            </button>
+
+
+            <!-- SORT DROPDOWN -->
+
+            <div class="sort-dropdown"
+                id="sortDropdown">
+
+                <div class="sort-option active"
+                    data-sort="featured">
+
+                    Featured
+
+                </div>
+
+                <div class="sort-option"
+                    data-sort="low">
+
+                    Price: Low to High
+
+                </div>
+
+                <div class="sort-option"
+                    data-sort="high">
+
+                    Price: High to Low
+
+                </div>
+
+                <div class="sort-option"
+                    data-sort="rating">
+
+                    Highest Rated
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= FILTER BUTTON ================= -->
+
+        <button class="filter-btn"
+            id="filterBtn">
+
+            <i class="fa-solid fa-sliders"></i>
+
+            Filters
+
+        </button>
+
+
+        <!-- ================= FILTER SIDEBAR ================= -->
+
+        <div class="filter-sidebar"
+            id="filterSidebar">
+
+
+            <!-- FILTER HEADER -->
+
+            <div class="filter-header">
+
+                <h2>
+
+                    Filters
+
+                </h2>
+
+                <button id="closeFilter">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+
+            <!-- PRICE FILTER -->
+
+            <div class="filter-group">
+
+                <h3>
+
+                    Price Range (per day)
+
+                </h3>
+
+                <input type="range"
+                    min="0"
+                    max="300"
+                    value="300"
+                    id="priceRange">
+
+                <div class="price-values">
+
+                    <span>$0</span>
+
+                    <span id="priceValue">
+
+                        $300
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- CAR TYPE -->
+
+            <div class="filter-group">
+
+                <h3>
+
+                    Car Type
+
+                </h3>
+
+                <label>
+
+                    <input type="checkbox"
+                        value="Sedan">
+
+                    Sedan
+
+                </label>
+
+
+                <label>
+
+                    <input type="checkbox"
+                        value="SUV">
+
+                    SUV
+
+                </label>
+
+
+                <label>
+
+                    <input type="checkbox"
+                        value="Sports">
+
+                    Sports
+
+                </label>
+
+
+                <label>
+
+                    <input type="checkbox"
+                        value="Electric">
+
+                    Electric
+
+                </label>
+
+
+                <label>
+
+                    <input type="checkbox"
+                        value="Convertible">
+
+                    Convertible
+
+                </label>
+
+            </div>
+
+
+            <!-- BRAND FILTER -->
+
+            <div class="filter-group">
+
+                <h3>
+
+                    Brand
+
+                </h3>
+
+                <label>
+
+                    <input type="checkbox"
+                        value="Tesla">
+
+                    Tesla
+
+                </label>
+
+
+                <label>
+
+                    <input type="checkbox"
+                        value="Toyota">
+
+                    Toyota
+
+                </label>
+
+
+                <label>
+
+                    <input type="checkbox"
+                        value="Porsche">
+
+                    Porsche
+
+                </label>
+
+
+                <label>
+
+                    <input type="checkbox"
+                        value="BMW">
+
+                    BMW
+
+                </label>
+
+
+                <label>
+
+                    <input type="checkbox"
+                        value="Ford">
+
+                    Ford
+
+                </label>
+
+
+                <label>
+
+                    <input type="checkbox"
+                        value="Honda">
+
+                    Honda
+
+                </label>
+
+            </div>
+
+
+            <!-- CLEAR FILTER -->
+
+            <button class="clear-btn">
+
+                Clear Filters
+
+            </button>
+
+        </div>
+
+
+        <!-- ================= RESULTS ================= -->
+
+        <div class="results-text">
+
+            Showing
+
+            <span id="carCount">
+
+                6
+
+            </span>
+
+            Cars
+
+        </div>
+
+
+        <!-- ================= CARS ================= -->
+
+        <section class="cars-container"
+            id="carsContainer">
+
+            <!-- DYNAMIC CARDS -->
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= TOAST ================= -->
+
+    <div class="toast"
+        id="toast">
+
+        Added To Wishlist ❤️
+
+    </div>
+
+
+    <!-- ================= BACK TO TOP ================= -->
+
+    <button class="top-btn"
+        id="topBtn">
+
+        <i class="fa-solid fa-arrow-up"></i>
+
+    </button>
+
+
+    <!-- ================= BOOKING MODAL ================= -->
+
+    <div class="booking-modal"
+        id="bookingModal">
+
+        <div class="modal-content">
+
+            <span class="close-modal"
+                id="closeModal">
+
+                &times;
+
+            </span>
+
+            <h2>
+
+                Book Your Car
+
+            </h2>
+
+            <input type="text"
+                placeholder="Your Name">
+
+            <input type="date">
+
+            <button id="confirmBooking">
+
+                Confirm Booking
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= COMPARE MODAL ================= -->
+
+    <div class="compare-modal"
+        id="compareModal">
+
+        <div class="compare-content">
+
+            <span class="close-compare"
+                id="closeCompare">
+
+                &times;
+
+            </span>
+
+            <h2>
+
+                Compare Cars
+
+            </h2>
+
+            <div id="compareContainer">
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+
+        <!-- FOOTER LOGO -->
+
+        <div class="footer-logo">
+
+            <div class="logo">
+
+                <i class="fa-solid fa-car-side"></i>
+
+                <h2>
+
+                    DriveNow
+
+                </h2>
+
+            </div>
+
+            <p>
+
+                Your trusted partner
+                for premium car rentals.
+                Drive your dream car today.
+
+            </p>
+
+        </div>
+
+
+        <!-- QUICK LINKS -->
+
+        <div class="footer-links">
+
+            <h3>
+
+                Quick Links
+
+            </h3>
+
+            <a href="#">Home</a>
+
+            <a href="#">browsecars Cars</a>
+
+            <a href="#">About Us</a>
+
+            <a href="#">Contact</a>
+
+        </div>
+
+
+        <!-- SUPPORT -->
+
+        <div class="footer-links">
+
+            <h3>
+
+                Support
+
+            </h3>
+
+            <a href="#">FAQ</a>
+
+            <a href="#">
+
+                Terms & Conditions
+
+            </a>
+
+            <a href="#">
+
+                Privacy Policy
+
+            </a>
+
+            <a href="#">
+
+                Help Center
+
+            </a>
+
+        </div>
+
+
+        <!-- CONTACT -->
+
+        <div class="footer-links">
+
+            <h3>
+
+                Contact Us
+
+            </h3>
+
+            <p>
+
+                <i class="fa-solid fa-phone"></i>
+
+                +1 (555) 123-4567
+
+            </p>
+
+            <p>
+
+                <i class="fa-solid fa-envelope"></i>
+
+                support@drivenow.com
+
+            </p>
+
+            <p>
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                123 Main St,
+                San Francisco, CA
+
+            </p>
+
+        </div>
+
+    </footer>
+    <!-- browsecars Cars section added -->
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="browsecars.js"></script>
+
+</body>
+
+</html>
