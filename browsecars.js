@@ -206,15 +206,6 @@ const sortOptions =
 const selectedSort =
     document.getElementById("selectedSort");
 
-const menuBtn =
-    document.getElementById("menuBtn");
-
-const mobileMenu =
-    document.getElementById("mobileMenu");
-
-const closeMenu =
-    document.getElementById("closeMenu");
-
 const filterBtn =
     document.getElementById("filterBtn");
 
@@ -238,9 +229,6 @@ const compareModal =
 
 const compareContainer =
     document.getElementById("compareContainer");
-
-const liveTime =
-    document.getElementById("liveTime");
 
 let favoriteCars = 0;
 
@@ -641,23 +629,6 @@ closeFilter.addEventListener("click", () => {
 
 
 /* =========================
-   MOBILE MENU
-========================= */
-
-menuBtn.addEventListener("click", () => {
-
-    mobileMenu.classList.add("active");
-
-});
-
-closeMenu.addEventListener("click", () => {
-
-    mobileMenu.classList.remove("active");
-
-});
-
-
-/* =========================
    LOADER
 ========================= */
 
@@ -853,9 +824,11 @@ document
 
     });
 
+
 /* =========================
    VIEW DETAILS
 ========================= */
+
 function showCars(cars) {
 
     const carsContainer =
@@ -938,10 +911,6 @@ function showCars(cars) {
         `;
 
 
-        /* =========================
-           VIEW DETAILS CLICK
-        ========================= */
-
         const detailsBtn =
             card.querySelector(".details-btn");
 
@@ -964,34 +933,6 @@ function showCars(cars) {
 
 }
 
-/* =========================
-   LIVE TIME
-========================= */
-
-function updateTime() {
-
-    const now = new Date();
-
-    const options = {
-
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit'
-
-    };
-
-    liveTime.textContent =
-        now.toLocaleTimeString(
-            'en-US',
-            options
-        );
-
-}
-
-setInterval(updateTime, 1000);
-
-updateTime();
-
 function saveCarDetails(car){
 
     localStorage.setItem(
@@ -1000,8 +941,3 @@ function saveCarDetails(car){
     );
 
 }
-window.onload = function () {
-
-    document.getElementById("loader").style.display = "none";
-
-};
