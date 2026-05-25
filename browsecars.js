@@ -13,7 +13,7 @@ const cars = [
         seats: "5 Seats",
         transmission: "Manual",
         fuel: "Gasoline",
-        image: "./images/car1.jpg"
+        image: "./images/Car1.jpg"
     },
 
     {
@@ -25,7 +25,7 @@ const cars = [
         seats: "7 Seats",
         transmission: "Automatic",
         fuel: "Diesel",
-        image: "./images/car2.jpg"
+        image: "./images/Car2.jpg"
     },
 
     {
@@ -37,7 +37,7 @@ const cars = [
         seats: "5 Seats",
         transmission: "Automatic",
         fuel: "Petrol",
-        image: "./images/car3.jpg"
+        image: "./images/Car3.jpg"
     },
 
     {
@@ -49,7 +49,7 @@ const cars = [
         seats: "2 Seats",
         transmission: "Automatic",
         fuel: "Gasoline",
-        image: "./images/car4.jpg"
+        image: "./images/Car4.jpg"
     },
 
     {
@@ -61,7 +61,7 @@ const cars = [
         seats: "5 Seats",
         transmission: "Automatic",
         fuel: "Diesel",
-        image: "./images/car5.jpg"
+        image: "./images/Car5.jpg"
     },
 
     {
@@ -73,7 +73,7 @@ const cars = [
         seats: "2 Seats",
         transmission: "Automatic",
         fuel: "Gasoline",
-        image: "./images/car6.jpg"
+        image: "./images/Car6.jpg"
     },
 
     {
@@ -85,7 +85,7 @@ const cars = [
         seats: "5 Seats",
         transmission: "Automatic",
         fuel: "Petrol",
-        image: "./images/car7.jpg"
+        image: "./images/Car7.jpg"
     },
 
    {
