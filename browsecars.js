@@ -13,7 +13,7 @@ const cars = [
         seats: "5 Seats",
         transmission: "Manual",
         fuel: "Gasoline",
-        image: "./images/Car1.jpg"
+        image: "./images/car1.jpg"
     },
 
     {
@@ -25,7 +25,7 @@ const cars = [
         seats: "7 Seats",
         transmission: "Automatic",
         fuel: "Diesel",
-        image: "./images/Car2.jpg"
+        image: "./images/car2.jpg"
     },
 
     {
@@ -37,7 +37,7 @@ const cars = [
         seats: "5 Seats",
         transmission: "Automatic",
         fuel: "Petrol",
-        image: "./images/Car3.jpg"
+        image: "./images/car3.jpg"
     },
 
     {
@@ -49,7 +49,7 @@ const cars = [
         seats: "2 Seats",
         transmission: "Automatic",
         fuel: "Gasoline",
-        image: "./images/Car4.jpg"
+        image: "./images/car4.jpg"
     },
 
     {
@@ -61,7 +61,7 @@ const cars = [
         seats: "5 Seats",
         transmission: "Automatic",
         fuel: "Diesel",
-        image: "./images/Car5.jpg"
+        image: "./images/car5.jpg"
     },
 
     {
@@ -73,7 +73,7 @@ const cars = [
         seats: "2 Seats",
         transmission: "Automatic",
         fuel: "Gasoline",
-        image: "./images/Car6.jpg"
+        image: "./images/car6.jpg"
     },
 
     {
@@ -85,7 +85,7 @@ const cars = [
         seats: "5 Seats",
         transmission: "Automatic",
         fuel: "Petrol",
-        image: "./images/Car7.jpg"
+        image: "./images/car7.jpg"
     },
 
     {
@@ -97,7 +97,7 @@ const cars = [
         seats: "4 Seats",
         transmission: "Automatic",
         fuel: "Gasoline",
-        image: "./images/Car8.jpg"
+        image: "./images/car8.jpg"
     },
 
     {
@@ -109,7 +109,7 @@ const cars = [
         seats: "4 Seats",
         transmission: "Automatic",
         fuel: "Gasoline",
-        image: "./images/Car9.jpg"
+        image: "./images/car9.jpg"
     },
 
     {
@@ -121,7 +121,7 @@ const cars = [
         seats: "5 Seats",
         transmission: "Automatic",
         fuel: "Petrol",
-        image: "./images/Car10.jpg"
+        image: "./images/car10.jpg"
     },
 
     {
@@ -133,7 +133,7 @@ const cars = [
         seats: "2 Seats",
         transmission: "Automatic",
         fuel: "Gasoline",
-        image: "./images/Car11.jpg"
+        image: "./images/car11.jpg"
     },
 
     {
@@ -145,7 +145,7 @@ const cars = [
         seats: "4 Seats",
         transmission: "Automatic",
         fuel: "Petrol",
-        image: "./images/Car12.jpg"
+        image: "./images/car12.jpg"
     },
 
     {
@@ -157,7 +157,7 @@ const cars = [
         seats: "4 Seats",
         transmission: "Automatic",
         fuel: "Petrol",
-        image: "./images/Car13.jpg"
+        image: "./images/car13.jpg"
     }
 
 ];
@@ -242,16 +242,16 @@ const compareContainer =
 const liveTime =
     document.getElementById("liveTime");
 
-let favoriteCars = 0;
+let favoritecars = 0;
 
-let compareCars = [];
+let comparecars = [];
 
 
 /* =========================
    DISPLAY CARS
 ========================= */
 
-function displayCars(data) {
+function displaycars(data) {
 
     carsContainer.innerHTML = "";
 
@@ -326,7 +326,7 @@ Compare
 
 <a href="viewdetails.html"
 class="details-btn"
-onclick='saveCarDetails(${JSON.stringify(car)})'>
+onclick='savecarDetails(${JSON.stringify(car)})'>
 
 View Details
 
@@ -366,7 +366,7 @@ Compare Now
 
 }
 
-displayCars(cars);
+displaycars(cars);
 
 
 /* =========================
@@ -378,7 +378,7 @@ searchInput.addEventListener("keyup", () => {
     const value =
         searchInput.value.toLowerCase();
 
-    const filteredCars =
+    const filteredcars =
         cars.filter(car =>
 
             car.name.toLowerCase().includes(value)
@@ -387,11 +387,11 @@ searchInput.addEventListener("keyup", () => {
 
         );
 
-    displayCars(filteredCars);
+    displaycars(filteredcars);
 
     searchSuggestions.innerHTML = "";
 
-    filteredCars.forEach(car => {
+    filteredcars.forEach(car => {
 
         searchSuggestions.innerHTML += `
 
@@ -435,14 +435,14 @@ sortOptions.forEach(option => {
 
         sortDropdown.classList.remove("active");
 
-        let sortedCars = [...cars];
+        let sortedcars = [...cars];
 
         const sortType =
             option.dataset.sort;
 
         if (sortType === "low") {
 
-            sortedCars.sort((a, b) =>
+            sortedcars.sort((a, b) =>
                 a.price - b.price
             );
 
@@ -450,7 +450,7 @@ sortOptions.forEach(option => {
 
         else if (sortType === "high") {
 
-            sortedCars.sort((a, b) =>
+            sortedcars.sort((a, b) =>
                 b.price - a.price
             );
 
@@ -458,13 +458,13 @@ sortOptions.forEach(option => {
 
         else if (sortType === "rating") {
 
-            sortedCars.sort((a, b) =>
+            sortedcars.sort((a, b) =>
                 b.rating - a.rating
             );
 
         }
 
-        displayCars(sortedCars);
+        displaycars(sortedcars);
 
     });
 
@@ -542,17 +542,17 @@ function wishlistFunction() {
 
             if (btn.classList.contains("active")) {
 
-                favoriteCars++;
+                favoritecars++;
 
             }
             else {
 
-                favoriteCars--;
+                favoritecars--;
 
             }
 
             favCount.textContent =
-                favoriteCars;
+                favoritecars;
 
             showToast("Wishlist Updated ❤️");
 
@@ -611,14 +611,14 @@ priceRange.addEventListener("input", () => {
     priceValue.textContent =
         `$${priceRange.value}`;
 
-    const filteredCars =
+    const filteredcars =
         cars.filter(car =>
 
             car.price <= priceRange.value
 
         );
 
-    displayCars(filteredCars);
+    displaycars(filteredcars);
 
 });
 
@@ -743,7 +743,7 @@ function cardAnimation() {
 
 function compareFunction() {
 
-    compareCars = [];
+    comparecars = [];
 
     const compareChecks =
         document.querySelectorAll(".compare-check");
@@ -755,7 +755,7 @@ function compareFunction() {
             const carName =
                 check.dataset.name;
 
-            const selectedCar =
+            const selectedcar =
                 cars.find(car =>
                     car.name === carName
                 );
@@ -763,21 +763,21 @@ function compareFunction() {
             if (check.checked) {
 
                 const alreadyExists =
-                    compareCars.some(car =>
-                        car.name === selectedCar.name
+                    comparecars.some(car =>
+                        car.name === selectedcar.name
                     );
 
                 if (!alreadyExists) {
 
-                    compareCars.push(selectedCar);
+                    comparecars.push(selectedcar);
 
                 }
 
             }
             else {
 
-                compareCars =
-                    compareCars.filter(car =>
+                comparecars =
+                    comparecars.filter(car =>
                         car.name !== carName
                     );
 
@@ -795,10 +795,10 @@ document.addEventListener("click", (e) => {
         e.target.classList.contains("compare-btn")
     ) {
 
-        if (compareCars.length < 2) {
+        if (comparecars.length < 2) {
 
             showToast(
-                "Select 2 Cars To Compare ⚠️"
+                "Select 2 cars To Compare ⚠️"
             );
 
             return;
@@ -811,7 +811,7 @@ document.addEventListener("click", (e) => {
 
 <div class="compare-grid">
 
-${compareCars.map(car => `
+${comparecars.map(car => `
 
 <div class="compare-card">
 
@@ -856,7 +856,7 @@ document
 /* =========================
    VIEW DETAILS
 ========================= */
-function showCars(cars) {
+function showcars(cars) {
 
     const carsContainer =
         document.getElementById("carsContainer");
@@ -948,7 +948,7 @@ function showCars(cars) {
         detailsBtn.addEventListener("click", () => {
 
             localStorage.setItem(
-                "selectedCar",
+                "selectedcar",
                 JSON.stringify(car)
             );
 
@@ -992,10 +992,10 @@ setInterval(updateTime, 1000);
 
 updateTime();
 
-function saveCarDetails(car){
+function savecarDetails(car){
 
     localStorage.setItem(
-        "selectedCar",
+        "selectedcar",
         JSON.stringify(car)
     );
 
