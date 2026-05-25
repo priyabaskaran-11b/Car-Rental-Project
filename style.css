@@ -54,6 +54,16 @@ body{
   font-size:16px;
 }
 
+.view__card{
+  text-decoration:none;
+  color:black;
+}
+
+.Book__card{
+  text-decoration:none;
+  color:#fff;
+}
+
 .dark-btn{
   padding:12px 22px;
   border:none;
@@ -63,6 +73,7 @@ body{
   cursor:pointer;
   font-size:16px;
 }
+
 
 .hero{
   height:90vh;
@@ -396,4 +407,3 @@ body{
   }
 
 }
-
