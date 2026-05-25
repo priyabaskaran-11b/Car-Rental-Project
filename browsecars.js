@@ -88,7 +88,7 @@ const cars = [
         image: "./images/car7.jpg"
     },
 
-    {
+   {
         name: "Chevrolet Camaro",
         brand: "Chevrolet",
         type: "Sports",
@@ -160,6 +160,8 @@ const cars = [
         image: "./images/car13.jpg"
     }
 
+
+   
 ];
 
 
@@ -242,16 +244,16 @@ const compareContainer =
 const liveTime =
     document.getElementById("liveTime");
 
-let favoritecars = 0;
+let favoriteCars = 0;
 
-let comparecars = [];
+let compareCars = [];
 
 
 /* =========================
    DISPLAY CARS
 ========================= */
 
-function displaycars(data) {
+function displayCars(data) {
 
     carsContainer.innerHTML = "";
 
@@ -326,7 +328,7 @@ Compare
 
 <a href="viewdetails.html"
 class="details-btn"
-onclick='savecarDetails(${JSON.stringify(car)})'>
+onclick='saveCarDetails(${JSON.stringify(car)})'>
 
 View Details
 
@@ -366,7 +368,7 @@ Compare Now
 
 }
 
-displaycars(cars);
+displayCars(cars);
 
 
 /* =========================
@@ -378,7 +380,7 @@ searchInput.addEventListener("keyup", () => {
     const value =
         searchInput.value.toLowerCase();
 
-    const filteredcars =
+    const filteredCars =
         cars.filter(car =>
 
             car.name.toLowerCase().includes(value)
@@ -387,11 +389,11 @@ searchInput.addEventListener("keyup", () => {
 
         );
 
-    displaycars(filteredcars);
+    displayCars(filteredCars);
 
     searchSuggestions.innerHTML = "";
 
-    filteredcars.forEach(car => {
+    filteredCars.forEach(car => {
 
         searchSuggestions.innerHTML += `
 
@@ -435,14 +437,14 @@ sortOptions.forEach(option => {
 
         sortDropdown.classList.remove("active");
 
-        let sortedcars = [...cars];
+        let sortedCars = [...cars];
 
         const sortType =
             option.dataset.sort;
 
         if (sortType === "low") {
 
-            sortedcars.sort((a, b) =>
+            sortedCars.sort((a, b) =>
                 a.price - b.price
             );
 
@@ -450,7 +452,7 @@ sortOptions.forEach(option => {
 
         else if (sortType === "high") {
 
-            sortedcars.sort((a, b) =>
+            sortedCars.sort((a, b) =>
                 b.price - a.price
             );
 
@@ -458,13 +460,13 @@ sortOptions.forEach(option => {
 
         else if (sortType === "rating") {
 
-            sortedcars.sort((a, b) =>
+            sortedCars.sort((a, b) =>
                 b.rating - a.rating
             );
 
         }
 
-        displaycars(sortedcars);
+        displayCars(sortedCars);
 
     });
 
@@ -542,17 +544,17 @@ function wishlistFunction() {
 
             if (btn.classList.contains("active")) {
 
-                favoritecars++;
+                favoriteCars++;
 
             }
             else {
 
-                favoritecars--;
+                favoriteCars--;
 
             }
 
             favCount.textContent =
-                favoritecars;
+                favoriteCars;
 
             showToast("Wishlist Updated ❤️");
 
@@ -611,14 +613,14 @@ priceRange.addEventListener("input", () => {
     priceValue.textContent =
         `$${priceRange.value}`;
 
-    const filteredcars =
+    const filteredCars =
         cars.filter(car =>
 
             car.price <= priceRange.value
 
         );
 
-    displaycars(filteredcars);
+    displayCars(filteredCars);
 
 });
 
@@ -743,7 +745,7 @@ function cardAnimation() {
 
 function compareFunction() {
 
-    comparecars = [];
+    compareCars = [];
 
     const compareChecks =
         document.querySelectorAll(".compare-check");
@@ -755,7 +757,7 @@ function compareFunction() {
             const carName =
                 check.dataset.name;
 
-            const selectedcar =
+            const selectedCar =
                 cars.find(car =>
                     car.name === carName
                 );
@@ -763,21 +765,21 @@ function compareFunction() {
             if (check.checked) {
 
                 const alreadyExists =
-                    comparecars.some(car =>
-                        car.name === selectedcar.name
+                    compareCars.some(car =>
+                        car.name === selectedCar.name
                     );
 
                 if (!alreadyExists) {
 
-                    comparecars.push(selectedcar);
+                    compareCars.push(selectedCar);
 
                 }
 
             }
             else {
 
-                comparecars =
-                    comparecars.filter(car =>
+                compareCars =
+                    compareCars.filter(car =>
                         car.name !== carName
                     );
 
@@ -795,10 +797,10 @@ document.addEventListener("click", (e) => {
         e.target.classList.contains("compare-btn")
     ) {
 
-        if (comparecars.length < 2) {
+        if (compareCars.length < 2) {
 
             showToast(
-                "Select 2 cars To Compare ⚠️"
+                "Select 2 Cars To Compare ⚠️"
             );
 
             return;
@@ -811,7 +813,7 @@ document.addEventListener("click", (e) => {
 
 <div class="compare-grid">
 
-${comparecars.map(car => `
+${compareCars.map(car => `
 
 <div class="compare-card">
 
@@ -856,7 +858,7 @@ document
 /* =========================
    VIEW DETAILS
 ========================= */
-function showcars(cars) {
+function showCars(cars) {
 
     const carsContainer =
         document.getElementById("carsContainer");
@@ -948,7 +950,7 @@ function showcars(cars) {
         detailsBtn.addEventListener("click", () => {
 
             localStorage.setItem(
-                "selectedcar",
+                "selectedCar",
                 JSON.stringify(car)
             );
 
@@ -992,10 +994,10 @@ setInterval(updateTime, 1000);
 
 updateTime();
 
-function savecarDetails(car){
+function saveCarDetails(car){
 
     localStorage.setItem(
-        "selectedcar",
+        "selectedCar",
         JSON.stringify(car)
     );
 
