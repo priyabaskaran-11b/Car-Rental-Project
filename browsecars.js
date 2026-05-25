@@ -13,7 +13,7 @@ const cars = [
         seats: "5 Seats",
         transmission: "Manual",
         fuel: "Gasoline",
-        image: "./images/car1.jpg"
+        image: "./images/Car1.jpg"
     },
 
     {
@@ -25,7 +25,7 @@ const cars = [
         seats: "7 Seats",
         transmission: "Automatic",
         fuel: "Diesel",
-        image: "./images/car2.jpg"
+        image: "./images/Car2.jpg"
     },
 
     {
@@ -37,7 +37,7 @@ const cars = [
         seats: "5 Seats",
         transmission: "Automatic",
         fuel: "Petrol",
-        image: "./images/car3.jpg"
+        image: "./images/Car3.jpg"
     },
 
     {
@@ -49,7 +49,7 @@ const cars = [
         seats: "2 Seats",
         transmission: "Automatic",
         fuel: "Gasoline",
-        image: "./images/car4.jpg"
+        image: "./images/Car4.jpg"
     },
 
     {
@@ -61,7 +61,7 @@ const cars = [
         seats: "5 Seats",
         transmission: "Automatic",
         fuel: "Diesel",
-        image: "./images/car5.jpg"
+        image: "./images/Car5.jpg"
     },
 
     {
@@ -73,7 +73,7 @@ const cars = [
         seats: "2 Seats",
         transmission: "Automatic",
         fuel: "Gasoline",
-        image: "./images/car6.jpg"
+        image: "./images/Car6.jpg"
     },
 
     {
@@ -85,7 +85,7 @@ const cars = [
         seats: "5 Seats",
         transmission: "Automatic",
         fuel: "Petrol",
-        image: "./images/car7.jpg"
+        image: "./images/Car7.jpg"
     },
 
     {
@@ -97,7 +97,7 @@ const cars = [
         seats: "4 Seats",
         transmission: "Automatic",
         fuel: "Gasoline",
-        image: "./images/car8.jpg"
+        image: "./images/Car8.jpg"
     },
 
     {
@@ -109,7 +109,7 @@ const cars = [
         seats: "4 Seats",
         transmission: "Automatic",
         fuel: "Gasoline",
-        image: "./images/car9.jpg"
+        image: "./images/Car9.jpg"
     },
 
     {
@@ -121,7 +121,7 @@ const cars = [
         seats: "5 Seats",
         transmission: "Automatic",
         fuel: "Petrol",
-        image: "./images/car10.jpg"
+        image: "./images/Car10.jpg"
     },
 
     {
@@ -133,7 +133,7 @@ const cars = [
         seats: "2 Seats",
         transmission: "Automatic",
         fuel: "Gasoline",
-        image: "./images/car11.jpg"
+        image: "./images/Car11.jpg"
     },
 
     {
@@ -145,7 +145,7 @@ const cars = [
         seats: "4 Seats",
         transmission: "Automatic",
         fuel: "Petrol",
-        image: "./images/car12.jpg"
+        image: "./images/Car12.jpg"
     },
 
     {
@@ -157,11 +157,10 @@ const cars = [
         seats: "4 Seats",
         transmission: "Automatic",
         fuel: "Petrol",
-        image: "./images/car13.jpg"
+        image: "./images/Car13.jpg"
     }
 
 ];
-
 
 
 /* =========================
@@ -169,69 +168,83 @@ const cars = [
 ========================= */
 
 const carsContainer =
-document.getElementById("carsContainer");
+    document.getElementById("carsContainer");
 
 const searchInput =
-document.getElementById("searchInput");
+    document.getElementById("searchInput");
 
 const carCount =
-document.getElementById("carCount");
+    document.getElementById("carCount");
 
 const darkModeBtn =
-document.getElementById("darkModeBtn");
+    document.getElementById("darkModeBtn");
 
 const toast =
-document.getElementById("toast");
+    document.getElementById("toast");
 
 const bookingModal =
-document.getElementById("bookingModal");
+    document.getElementById("bookingModal");
 
 const closeModal =
-document.getElementById("closeModal");
+    document.getElementById("closeModal");
 
 const priceRange =
-document.getElementById("priceRange");
+    document.getElementById("priceRange");
 
 const priceValue =
-document.getElementById("priceValue");
+    document.getElementById("priceValue");
 
 const sortBtn =
-document.getElementById("sortBtn");
+    document.getElementById("sortBtn");
 
 const sortDropdown =
-document.getElementById("sortDropdown");
+    document.getElementById("sortDropdown");
 
 const sortOptions =
-document.querySelectorAll(".sort-option");
+    document.querySelectorAll(".sort-option");
 
 const selectedSort =
-document.getElementById("selectedSort");
+    document.getElementById("selectedSort");
+
+const menuBtn =
+    document.getElementById("menuBtn");
+
+const mobileMenu =
+    document.getElementById("mobileMenu");
+
+const closeMenu =
+    document.getElementById("closeMenu");
 
 const filterBtn =
-document.getElementById("filterBtn");
+    document.getElementById("filterBtn");
 
 const filterSidebar =
-document.getElementById("filterSidebar");
+    document.getElementById("filterSidebar");
 
 const closeFilter =
-document.getElementById("closeFilter");
+    document.getElementById("closeFilter");
 
 const favCount =
-document.getElementById("favCount");
+    document.getElementById("favCount");
+
+const searchSuggestions =
+    document.getElementById("searchSuggestions");
 
 const topBtn =
-document.getElementById("topBtn");
+    document.getElementById("topBtn");
 
 const compareModal =
-document.getElementById("compareModal");
+    document.getElementById("compareModal");
 
 const compareContainer =
-document.getElementById("compareContainer");
+    document.getElementById("compareContainer");
+
+const liveTime =
+    document.getElementById("liveTime");
 
 let favoriteCars = 0;
 
 let compareCars = [];
-
 
 
 /* =========================
@@ -249,34 +262,50 @@ function displayCars(data) {
 <div class="car-card">
 
 <div class="wishlist-btn">
+
 <i class="fa-solid fa-heart"></i>
+
 </div>
 
-<img src="${car.image}" class="car-image">
+<img src="${car.image}"
+class="car-image">
 
 <div class="car-content">
 
 <span class="car-badge">
+
 ${car.type}
+
 </span>
 
 <h2 class="car-title">
+
 ${car.name}
+
 </h2>
 
 <div class="car-rating">
+
 ⭐ ${car.rating}
+
 </div>
 
 <div class="car-details">
+
 <span>${car.seats}</span>
+
 <span>${car.transmission}</span>
+
 <span>${car.fuel}</span>
+
 </div>
 
 <div class="car-price">
+
 $${car.price}
+
 <span>/day</span>
+
 </div>
 
 <div class="compare-checkbox">
@@ -304,13 +333,17 @@ View Details
 </a>
 
 <button class="book-btn">
+
 Book Now
+
 </button>
 
 </div>
 
 <button class="compare-btn">
+
 Compare Now
+
 </button>
 
 </div>
@@ -329,10 +362,11 @@ Compare Now
 
     compareFunction();
 
+    cardAnimation();
+
 }
 
 displayCars(cars);
-
 
 
 /* =========================
@@ -342,21 +376,36 @@ displayCars(cars);
 searchInput.addEventListener("keyup", () => {
 
     const value =
-    searchInput.value.toLowerCase();
+        searchInput.value.toLowerCase();
 
     const filteredCars =
-    cars.filter(car =>
+        cars.filter(car =>
 
-        car.name.toLowerCase().includes(value)
-        ||
-        car.brand.toLowerCase().includes(value)
+            car.name.toLowerCase().includes(value)
+            ||
+            car.brand.toLowerCase().includes(value)
 
-    );
+        );
 
     displayCars(filteredCars);
 
-});
+    searchSuggestions.innerHTML = "";
 
+    filteredCars.forEach(car => {
+
+        searchSuggestions.innerHTML += `
+
+<div class="suggestion-item">
+
+${car.name}
+
+</div>
+
+`;
+
+    });
+
+});
 
 
 /* =========================
@@ -373,29 +422,45 @@ sortOptions.forEach(option => {
 
     option.addEventListener("click", () => {
 
+        sortOptions.forEach(item => {
+
+            item.classList.remove("active");
+
+        });
+
+        option.classList.add("active");
+
+        selectedSort.textContent =
+            option.textContent;
+
+        sortDropdown.classList.remove("active");
+
         let sortedCars = [...cars];
 
         const sortType =
-        option.dataset.sort;
+            option.dataset.sort;
 
         if (sortType === "low") {
 
             sortedCars.sort((a, b) =>
-            a.price - b.price);
+                a.price - b.price
+            );
 
         }
 
         else if (sortType === "high") {
 
             sortedCars.sort((a, b) =>
-            b.price - a.price);
+                b.price - a.price
+            );
 
         }
 
         else if (sortType === "rating") {
 
             sortedCars.sort((a, b) =>
-            b.rating - a.rating);
+                b.rating - a.rating
+            );
 
         }
 
@@ -406,13 +471,12 @@ sortOptions.forEach(option => {
 });
 
 
-
 /* =========================
    DARK MODE
 ========================= */
 
-if(localStorage.getItem("darkMode")
-=== "enabled") {
+if (localStorage.getItem("darkMode")
+    === "enabled") {
 
     document.body.classList.add("dark");
 
@@ -422,7 +486,7 @@ darkModeBtn.addEventListener("click", () => {
 
     document.body.classList.toggle("dark");
 
-    if(document.body.classList.contains("dark")) {
+    if (document.body.classList.contains("dark")) {
 
         localStorage.setItem(
             "darkMode",
@@ -430,7 +494,6 @@ darkModeBtn.addEventListener("click", () => {
         );
 
     }
-
     else {
 
         localStorage.setItem(
@@ -441,7 +504,6 @@ darkModeBtn.addEventListener("click", () => {
     }
 
 });
-
 
 
 /* =========================
@@ -463,7 +525,6 @@ function showToast(message) {
 }
 
 
-
 /* =========================
    WISHLIST
 ========================= */
@@ -471,7 +532,7 @@ function showToast(message) {
 function wishlistFunction() {
 
     const wishlistBtns =
-    document.querySelectorAll(".wishlist-btn");
+        document.querySelectorAll(".wishlist-btn");
 
     wishlistBtns.forEach(btn => {
 
@@ -479,12 +540,11 @@ function wishlistFunction() {
 
             btn.classList.toggle("active");
 
-            if(btn.classList.contains("active")) {
+            if (btn.classList.contains("active")) {
 
                 favoriteCars++;
 
             }
-
             else {
 
                 favoriteCars--;
@@ -492,7 +552,7 @@ function wishlistFunction() {
             }
 
             favCount.textContent =
-            favoriteCars;
+                favoriteCars;
 
             showToast("Wishlist Updated ❤️");
 
@@ -503,7 +563,6 @@ function wishlistFunction() {
 }
 
 
-
 /* =========================
    BOOKING
 ========================= */
@@ -511,7 +570,7 @@ function wishlistFunction() {
 function bookingFunction() {
 
     const bookBtns =
-    document.querySelectorAll(".book-btn");
+        document.querySelectorAll(".book-btn");
 
     bookBtns.forEach(btn => {
 
@@ -525,16 +584,22 @@ function bookingFunction() {
 
 }
 
-if(closeModal){
+closeModal.addEventListener("click", () => {
 
-    closeModal.addEventListener("click", () => {
+    bookingModal.classList.remove("active");
+
+});
+
+document
+    .getElementById("confirmBooking")
+
+    .addEventListener("click", () => {
 
         bookingModal.classList.remove("active");
 
+        showToast("Booking Successful 🚗");
+
     });
-
-}
-
 
 
 /* =========================
@@ -544,19 +609,18 @@ if(closeModal){
 priceRange.addEventListener("input", () => {
 
     priceValue.textContent =
-    `$${priceRange.value}`;
+        `$${priceRange.value}`;
 
     const filteredCars =
-    cars.filter(car =>
+        cars.filter(car =>
 
-        car.price <= priceRange.value
+            car.price <= priceRange.value
 
-    );
+        );
 
     displayCars(filteredCars);
 
 });
-
 
 
 /* =========================
@@ -576,6 +640,38 @@ closeFilter.addEventListener("click", () => {
 });
 
 
+/* =========================
+   MOBILE MENU
+========================= */
+
+menuBtn.addEventListener("click", () => {
+
+    mobileMenu.classList.add("active");
+
+});
+
+closeMenu.addEventListener("click", () => {
+
+    mobileMenu.classList.remove("active");
+
+});
+
+
+/* =========================
+   LOADER
+========================= */
+
+window.addEventListener("load", () => {
+
+    setTimeout(() => {
+
+        document.getElementById("loader")
+            .style.display = "none";
+
+    }, 1200);
+
+});
+
 
 /* =========================
    TOP BUTTON
@@ -583,12 +679,11 @@ closeFilter.addEventListener("click", () => {
 
 window.addEventListener("scroll", () => {
 
-    if(window.scrollY > 300) {
+    if (window.scrollY > 300) {
 
         topBtn.style.display = "block";
 
     }
-
     else {
 
         topBtn.style.display = "none";
@@ -609,6 +704,38 @@ topBtn.addEventListener("click", () => {
 });
 
 
+/* =========================
+   CARD ANIMATION
+========================= */
+
+function cardAnimation() {
+
+    const cards =
+        document.querySelectorAll(".car-card");
+
+    cards.forEach((card, index) => {
+
+        card.style.opacity = "0";
+
+        card.style.transform =
+            "translateY(40px)";
+
+        setTimeout(() => {
+
+            card.style.opacity = "1";
+
+            card.style.transform =
+                "translateY(0px)";
+
+            card.style.transition =
+                "0.5s";
+
+        }, index * 100);
+
+    });
+
+}
+
 
 /* =========================
    COMPARE FUNCTION
@@ -619,38 +746,40 @@ function compareFunction() {
     compareCars = [];
 
     const compareChecks =
-    document.querySelectorAll(".compare-check");
+        document.querySelectorAll(".compare-check");
 
     compareChecks.forEach(check => {
 
         check.addEventListener("change", () => {
 
             const carName =
-            check.dataset.name;
+                check.dataset.name;
 
             const selectedCar =
-            cars.find(car =>
-            car.name === carName);
+                cars.find(car =>
+                    car.name === carName
+                );
 
-            if(check.checked) {
+            if (check.checked) {
 
                 const alreadyExists =
-                compareCars.some(car =>
-                car.name === selectedCar.name);
+                    compareCars.some(car =>
+                        car.name === selectedCar.name
+                    );
 
-                if(!alreadyExists) {
+                if (!alreadyExists) {
 
                     compareCars.push(selectedCar);
 
                 }
 
             }
-
             else {
 
                 compareCars =
-                compareCars.filter(car =>
-                car.name !== carName);
+                    compareCars.filter(car =>
+                        car.name !== carName
+                    );
 
             }
 
@@ -660,16 +789,16 @@ function compareFunction() {
 
 }
 
-
-
 document.addEventListener("click", (e) => {
 
-    if(e.target.classList.contains("compare-btn")) {
+    if (
+        e.target.classList.contains("compare-btn")
+    ) {
 
-        if(compareCars.length < 2) {
+        if (compareCars.length < 2) {
 
             showToast(
-            "Select 2 Cars To Compare ⚠️"
+                "Select 2 Cars To Compare ⚠️"
             );
 
             return;
@@ -711,10 +840,157 @@ ${compareCars.map(car => `
 });
 
 
+/* =========================
+   CLOSE COMPARE
+========================= */
+
+document
+    .getElementById("closeCompare")
+
+    .addEventListener("click", () => {
+
+        compareModal.classList.remove("active");
+
+    });
 
 /* =========================
    VIEW DETAILS
 ========================= */
+function showCars(cars) {
+
+    const carsContainer =
+        document.getElementById("carsContainer");
+
+    carsContainer.innerHTML = "";
+
+    cars.forEach((car) => {
+
+        const card =
+            document.createElement("div");
+
+        card.classList.add("car-card");
+
+        card.innerHTML = `
+
+        <div class="car-image">
+
+            <img src="${car.image}" alt="${car.name}">
+
+        </div>
+
+        <div class="car-content">
+
+            <span class="car-type">
+                ${car.type}
+            </span>
+
+            <h2>
+                ${car.name}
+            </h2>
+
+            <div class="car-rating">
+
+                ⭐ ${car.rating}
+
+            </div>
+
+            <div class="car-price">
+
+                $${car.price}
+                <span>/day</span>
+
+            </div>
+
+            <div class="car-details">
+
+                <span>
+                    👥 ${car.seats}
+                </span>
+
+                <span>
+                    ⚙ ${car.transmission}
+                </span>
+
+                <span>
+                    ⛽ ${car.fuel}
+                </span>
+
+            </div>
+
+            <div class="card-buttons">
+
+                <button class="details-btn">
+
+                    View Details
+
+                </button>
+
+                <button class="book-btn">
+
+                    Book Now
+
+                </button>
+
+            </div>
+
+        </div>
+
+        `;
+
+
+        /* =========================
+           VIEW DETAILS CLICK
+        ========================= */
+
+        const detailsBtn =
+            card.querySelector(".details-btn");
+
+        detailsBtn.addEventListener("click", () => {
+
+            localStorage.setItem(
+                "selectedCar",
+                JSON.stringify(car)
+            );
+
+            window.location.href =
+                "viewdetails.html";
+
+        });
+
+
+        carsContainer.appendChild(card);
+
+    });
+
+}
+
+/* =========================
+   LIVE TIME
+========================= */
+
+function updateTime() {
+
+    const now = new Date();
+
+    const options = {
+
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+
+    };
+
+    liveTime.textContent =
+        now.toLocaleTimeString(
+            'en-US',
+            options
+        );
+
+}
+
+setInterval(updateTime, 1000);
+
+updateTime();
 
 function saveCarDetails(car){
 

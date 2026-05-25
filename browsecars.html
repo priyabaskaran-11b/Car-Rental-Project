@@ -5,97 +5,141 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
     <title>DriveNow - browsecars Cars</title>
 
     <!-- GOOGLE FONT -->
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <!-- FONT AWESOME -->
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- CSS -->
 
-    <link rel="stylesheet" href="browsecars.css">
+    <link rel="stylesheet"
+        href="browsecars.css">
 
 </head>
 
 <body id="body">
 
 
-   
+    <!-- ================= LOADER ================= -->
+
+    <div class="loader"
+        id="loader">
+
+        <div class="spinner"></div>
+
+    </div>
 
 
     <!-- ================= NAVBAR ================= -->
-    <nav class="navbar">
 
-        <div class="logo">
+    <header class="navbar">
 
-            <i class="fa-solid fa-car-side"></i>
 
-            <h2>DriveNow</h2>
+        <!-- LOGO -->
 
-        </div>
+        <div class="logo-section">
 
-        <div class="nav-links">
+            <div class="logo">
 
-            <a href="index.html">
+                <i class="fa-solid fa-car-side"></i>
 
-                Home
+                <h2>DriveNow</h2>
 
-            </a>
+            </div>
 
-            <a href="browse.html">
 
-                Browse Cars
+            <!-- LIVE TIME -->
 
-            </a>
+            <div class="live-time"
+                id="liveTime">
 
-            <a href="about.html">
+                10:45 PM
 
-                About
-
-            </a>
-
-            <a href="contact.html">
-
-                Contact
-
-            </a>
+            </div>
 
         </div>
 
-    </nav>
 
-    
+        <!-- NAV ACTIONS -->
 
-        
+        <div class="nav-actions">
+
+
+            <!-- FAVORITE COUNT -->
+
+            <div class="favorite-count">
+
+                <i class="fa-solid fa-heart"></i>
+
+                <span id="favCount">
+
+                    0
+
+                </span>
+
+            </div>
+
+
+            <!-- DARK MODE -->
+
+            <button class="dark-mode-btn"
+                id="darkModeBtn">
+
+                <i class="fa-solid fa-moon"></i>
+
+            </button>
+
+
+            <!-- MENU -->
+
+            <div class="menu-icon"
+                id="menuBtn">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </div>
+
+        </div>
+
+    </header>
 
 
     <!-- ================= MOBILE MENU ================= -->
 
-    <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu"
+        id="mobileMenu">
 
-        <div class="close-menu" id="closeMenu">
+        <div class="close-menu"
+            id="closeMenu">
 
             <i class="fa-solid fa-xmark"></i>
 
         </div>
 
-        <a href="#">Home</a>
+        <a href="index.html">Home</a>
 
-        <a href="#">browsecars Cars</a>
+        <a href="browsecars.html">browsecars Cars</a>
 
-        <a href="#">About</a>
+        <a href="about.html">About</a>
 
-        <a href="#">Contact</a>
+        <a href="contact.html">Contact</a>
 
     </div>
 
@@ -131,14 +175,17 @@
 
             <i class="fa-solid fa-magnifying-glass"></i>
 
-            <input type="text" id="searchInput" placeholder="Search by car name or brand...">
+            <input type="text"
+                id="searchInput"
+                placeholder="Search by car name or brand...">
 
         </div>
 
 
         <!-- SEARCH SUGGESTIONS -->
 
-        <div class="search-suggestions" id="searchSuggestions">
+        <div class="search-suggestions"
+            id="searchSuggestions">
 
         </div>
 
@@ -147,7 +194,8 @@
 
         <div class="sort-container">
 
-            <button class="sort-btn" id="sortBtn">
+            <button class="sort-btn"
+                id="sortBtn">
 
                 <span id="selectedSort">
 
@@ -162,27 +210,32 @@
 
             <!-- SORT DROPDOWN -->
 
-            <div class="sort-dropdown" id="sortDropdown">
+            <div class="sort-dropdown"
+                id="sortDropdown">
 
-                <div class="sort-option active" data-sort="featured">
+                <div class="sort-option active"
+                    data-sort="featured">
 
                     Featured
 
                 </div>
 
-                <div class="sort-option" data-sort="low">
+                <div class="sort-option"
+                    data-sort="low">
 
                     Price: Low to High
 
                 </div>
 
-                <div class="sort-option" data-sort="high">
+                <div class="sort-option"
+                    data-sort="high">
 
                     Price: High to Low
 
                 </div>
 
-                <div class="sort-option" data-sort="rating">
+                <div class="sort-option"
+                    data-sort="rating">
 
                     Highest Rated
 
@@ -195,7 +248,8 @@
 
         <!-- ================= FILTER BUTTON ================= -->
 
-        <button class="filter-btn" id="filterBtn">
+        <button class="filter-btn"
+            id="filterBtn">
 
             <i class="fa-solid fa-sliders"></i>
 
@@ -206,7 +260,8 @@
 
         <!-- ================= FILTER SIDEBAR ================= -->
 
-        <div class="filter-sidebar" id="filterSidebar">
+        <div class="filter-sidebar"
+            id="filterSidebar">
 
 
             <!-- FILTER HEADER -->
@@ -238,7 +293,11 @@
 
                 </h3>
 
-                <input type="range" min="0" max="300" value="300" id="priceRange">
+                <input type="range"
+                    min="0"
+                    max="300"
+                    value="300"
+                    id="priceRange">
 
                 <div class="price-values">
 
@@ -267,7 +326,8 @@
 
                 <label>
 
-                    <input type="checkbox" value="Sedan">
+                    <input type="checkbox"
+                        value="Sedan">
 
                     Sedan
 
@@ -276,7 +336,8 @@
 
                 <label>
 
-                    <input type="checkbox" value="SUV">
+                    <input type="checkbox"
+                        value="SUV">
 
                     SUV
 
@@ -285,7 +346,8 @@
 
                 <label>
 
-                    <input type="checkbox" value="Sports">
+                    <input type="checkbox"
+                        value="Sports">
 
                     Sports
 
@@ -294,7 +356,8 @@
 
                 <label>
 
-                    <input type="checkbox" value="Electric">
+                    <input type="checkbox"
+                        value="Electric">
 
                     Electric
 
@@ -303,7 +366,8 @@
 
                 <label>
 
-                    <input type="checkbox" value="Convertible">
+                    <input type="checkbox"
+                        value="Convertible">
 
                     Convertible
 
@@ -324,7 +388,8 @@
 
                 <label>
 
-                    <input type="checkbox" value="Tesla">
+                    <input type="checkbox"
+                        value="Tesla">
 
                     Tesla
 
@@ -333,7 +398,8 @@
 
                 <label>
 
-                    <input type="checkbox" value="Toyota">
+                    <input type="checkbox"
+                        value="Toyota">
 
                     Toyota
 
@@ -342,7 +408,8 @@
 
                 <label>
 
-                    <input type="checkbox" value="Porsche">
+                    <input type="checkbox"
+                        value="Porsche">
 
                     Porsche
 
@@ -351,7 +418,8 @@
 
                 <label>
 
-                    <input type="checkbox" value="BMW">
+                    <input type="checkbox"
+                        value="BMW">
 
                     BMW
 
@@ -360,7 +428,8 @@
 
                 <label>
 
-                    <input type="checkbox" value="Ford">
+                    <input type="checkbox"
+                        value="Ford">
 
                     Ford
 
@@ -369,7 +438,8 @@
 
                 <label>
 
-                    <input type="checkbox" value="Honda">
+                    <input type="checkbox"
+                        value="Honda">
 
                     Honda
 
@@ -408,7 +478,8 @@
 
         <!-- ================= CARS ================= -->
 
-        <section class="cars-container" id="carsContainer">
+        <section class="cars-container"
+            id="carsContainer">
 
             <!-- DYNAMIC CARDS -->
 
@@ -419,7 +490,8 @@
 
     <!-- ================= TOAST ================= -->
 
-    <div class="toast" id="toast">
+    <div class="toast"
+        id="toast">
 
         Added To Wishlist ❤️
 
@@ -428,7 +500,8 @@
 
     <!-- ================= BACK TO TOP ================= -->
 
-    <button class="top-btn" id="topBtn">
+    <button class="top-btn"
+        id="topBtn">
 
         <i class="fa-solid fa-arrow-up"></i>
 
@@ -437,11 +510,13 @@
 
     <!-- ================= BOOKING MODAL ================= -->
 
-    <div class="booking-modal" id="bookingModal">
+    <div class="booking-modal"
+        id="bookingModal">
 
         <div class="modal-content">
 
-            <span class="close-modal" id="closeModal">
+            <span class="close-modal"
+                id="closeModal">
 
                 &times;
 
@@ -453,7 +528,8 @@
 
             </h2>
 
-            <input type="text" placeholder="Your Name">
+            <input type="text"
+                placeholder="Your Name">
 
             <input type="date">
 
@@ -470,11 +546,13 @@
 
     <!-- ================= COMPARE MODAL ================= -->
 
-    <div class="compare-modal" id="compareModal">
+    <div class="compare-modal"
+        id="compareModal">
 
         <div class="compare-content">
 
-            <span class="close-compare" id="closeCompare">
+            <span class="close-compare"
+                id="closeCompare">
 
                 &times;
 
