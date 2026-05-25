@@ -1,0 +1,1018 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#f5f5f5;
+    color:#111;
+    overflow-x:hidden;
+    transition:0.4s;
+}
+
+.nav-links{
+
+    display:flex;
+    align-items:center;
+    gap:25px;
+
+}
+
+.nav-links a{
+
+    text-decoration:none;
+
+    color:#111;
+
+    font-weight:600;
+
+    transition:0.3s;
+
+}
+
+.nav-links a:hover{
+
+    color:#555;
+
+}
+
+/* =========================
+   LOADER
+========================= */
+
+.loader{
+    position:fixed;
+    inset:0;
+    background:#ffffff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+}
+
+.spinner{
+    width:75px;
+    height:75px;
+    border:7px solid #e5e5e5;
+    border-top:7px solid #111;
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+
+    100%{
+        transform:rotate(360deg);
+    }
+
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+    width:100%;
+    padding:20px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    position:sticky;
+    top:0;
+    z-index:5000;
+
+    background:rgba(255,255,255,0.75);
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+.logo-section{
+    display:flex;
+    flex-direction:column;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo i{
+    font-size:30px;
+}
+
+.logo h2{
+    font-size:30px;
+    font-weight:700;
+}
+
+/* =========================
+   LIVE TIME
+========================= */
+
+.live-time{
+    font-size:14px;
+    color:#666;
+    margin-top:5px;
+}
+
+/* =========================
+   NAV ACTIONS
+========================= */
+
+.nav-actions{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+/* =========================
+   FAVORITE COUNT
+========================= */
+
+.favorite-count{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    background:#111;
+    color:#fff;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:4px;
+
+    font-size:14px;
+}
+
+/* =========================
+   DARK MODE BUTTON
+========================= */
+
+.dark-mode-btn{
+    width:48px;
+    height:48px;
+    border:none;
+    border-radius:50%;
+    background:#111;
+    color:#fff;
+    cursor:pointer;
+    font-size:18px;
+    transition:0.3s;
+}
+
+.dark-mode-btn:hover{
+    transform:scale(1.1);
+}
+
+/* =========================
+   MENU ICON
+========================= */
+
+.menu-icon{
+    font-size:25px;
+    cursor:pointer;
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+.mobile-menu{
+    position:fixed;
+    top:0;
+    right:-100%;
+    width:300px;
+    height:100vh;
+    background:#fff;
+
+    padding:35px;
+
+    display:flex;
+    flex-direction:column;
+    gap:28px;
+
+    transition:0.4s;
+
+    z-index:9999;
+
+    box-shadow:-5px 0 25px rgba(0,0,0,0.1);
+}
+
+.mobile-menu.active{
+    right:0;
+}
+
+.mobile-menu a{
+    text-decoration:none;
+    color:#111;
+    font-size:18px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.mobile-menu a:hover{
+    transform:translateX(6px);
+}
+
+.close-menu{
+    align-self:flex-end;
+    font-size:26px;
+    cursor:pointer;
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container{
+    width:90%;
+    margin:auto;
+    padding:50px 0;
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.heading-section{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.heading-section h1{
+    font-size:52px;
+    margin-bottom:15px;
+    font-weight:700;
+}
+
+.heading-section p{
+    font-size:18px;
+    color:#666;
+}
+
+/* =========================
+   SEARCH BOX
+========================= */
+
+.search-box{
+    background:#fff;
+    border-radius:22px;
+    padding:18px 22px;
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    margin-bottom:10px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,0.05);
+
+    transition:0.3s;
+}
+
+.search-box:focus-within{
+    transform:translateY(-2px);
+}
+
+.search-box i{
+    color:#777;
+}
+
+.search-box input{
+    width:100%;
+    border:none;
+    outline:none;
+    background:none;
+    font-size:16px;
+    font-family:'Inter',sans-serif;
+}
+
+/* =========================
+   SEARCH SUGGESTIONS
+========================= */
+
+.search-suggestions{
+    background:#fff;
+    border-radius:18px;
+    overflow:hidden;
+
+    box-shadow:0 8px 25px rgba(0,0,0,0.05);
+
+    margin-bottom:25px;
+}
+
+.suggestion-item{
+    padding:15px 20px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.suggestion-item:hover{
+    background:#f0f0f0;
+}
+
+/* =========================
+   SORT
+========================= */
+
+.sort-container{
+    position:relative;
+    margin-bottom:25px;
+}
+
+.sort-btn{
+    background:#fff;
+    border:none;
+    padding:15px 22px;
+    border-radius:18px;
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    cursor:pointer;
+
+    box-shadow:0 6px 20px rgba(0,0,0,0.05);
+
+    transition:0.3s;
+}
+
+.sort-btn:hover{
+    transform:translateY(-2px);
+}
+
+.sort-dropdown{
+    position:absolute;
+    top:68px;
+    left:0;
+
+    width:260px;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    display:none;
+
+    z-index:100;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+.sort-dropdown.active{
+    display:block;
+}
+
+.sort-option{
+    padding:16px 20px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.sort-option:hover{
+    background:#f0f0f0;
+}
+
+.sort-option.active{
+    background:#111;
+    color:#fff;
+}
+
+/* =========================
+   FILTER BUTTON
+========================= */
+
+.filter-btn{
+    border:none;
+    background:#111;
+    color:#fff;
+
+    padding:16px 28px;
+
+    border-radius:18px;
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    cursor:pointer;
+
+    margin-bottom:35px;
+
+    transition:0.3s;
+}
+
+.filter-btn:hover{
+    transform:scale(1.03);
+}
+
+/* =========================
+   FILTER SIDEBAR
+========================= */
+
+.filter-sidebar{
+    position:fixed;
+    top:0;
+    left:-100%;
+
+    width:340px;
+    height:100vh;
+
+    background:#fff;
+
+    padding:35px;
+
+    overflow-y:auto;
+
+    z-index:9999;
+
+    transition:0.4s;
+
+    box-shadow:5px 0 25px rgba(0,0,0,0.1);
+}
+
+.filter-sidebar.active{
+    left:0;
+}
+
+.filter-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:35px;
+}
+
+.filter-header h2{
+    font-size:30px;
+}
+
+.filter-header button{
+    border:none;
+    background:none;
+    font-size:26px;
+    cursor:pointer;
+}
+
+.filter-group{
+    margin-bottom:35px;
+}
+
+.filter-group h3{
+    margin-bottom:18px;
+}
+
+.filter-group label{
+    display:block;
+    margin-bottom:14px;
+    cursor:pointer;
+    color:#555;
+}
+
+.price-values{
+    display:flex;
+    justify-content:space-between;
+    margin-top:12px;
+}
+
+.clear-btn{
+    width:100%;
+    padding:16px;
+    border:none;
+    background:#111;
+    color:#fff;
+    border-radius:18px;
+    cursor:pointer;
+}
+
+/* =========================
+   RESULTS TEXT
+========================= */
+
+.results-text{
+    margin-bottom:25px;
+    color:#666;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.cars-container{
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(320px,1fr));
+
+    gap:28px;
+}
+
+.car-card{
+    background:#fff;
+    border-radius:26px;
+    overflow:hidden;
+    position:relative;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.05);
+
+    transition:0.4s;
+}
+
+.car-card:hover{
+    transform:translateY(-8px);
+}
+
+.car-image{
+    width:100%;
+    height:230px;
+    object-fit:cover;
+    transition:0.4s;
+}
+
+.car-card:hover .car-image{
+    transform:scale(1.08);
+}
+
+/* =========================
+   WISHLIST
+========================= */
+
+.wishlist-btn{
+    position:absolute;
+    top:15px;
+    right:15px;
+
+    width:46px;
+    height:46px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+
+    transition:0.3s;
+
+    z-index:100;
+}
+
+.wishlist-btn:hover{
+    transform:scale(1.1);
+}
+
+.wishlist-btn.active{
+    color:red;
+}
+
+/* =========================
+   CARD CONTENT
+========================= */
+
+.car-content{
+    padding:24px;
+}
+
+.car-badge{
+    display:inline-block;
+
+    background:#111;
+    color:#fff;
+
+    padding:7px 15px;
+
+    border-radius:30px;
+
+    font-size:13px;
+
+    margin-bottom:18px;
+}
+
+.car-title{
+    font-size:28px;
+    margin-bottom:12px;
+}
+
+.car-rating{
+    color:#f5b301;
+    margin-bottom:18px;
+}
+
+.car-details{
+    display:flex;
+    justify-content:space-between;
+
+    margin-bottom:22px;
+
+    color:#666;
+
+    font-size:14px;
+}
+
+.car-price{
+    font-size:32px;
+    font-weight:700;
+    margin-bottom:22px;
+}
+
+.car-price span{
+    font-size:16px;
+    color:#777;
+}
+
+/* =========================
+   COMPARE CHECKBOX
+========================= */
+
+.compare-checkbox{
+    margin-bottom:15px;
+    font-size:14px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.card-buttons{
+    display:flex;
+    gap:14px;
+    margin-bottom:12px;
+}
+
+.details-btn,
+.book-btn{
+    flex:1;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:16px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:0.3s;
+
+    text-decoration:none;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.details-btn{
+    background:#f0f0f0;
+    color:#111;
+}
+
+.book-btn{
+    background:#111;
+    color:#fff;
+}
+
+.details-btn:hover,
+.book-btn:hover{
+    transform:translateY(-2px);
+}
+
+.compare-btn{
+    width:100%;
+    padding:15px;
+    border:none;
+    background:#111;
+    color:#fff;
+    border-radius:16px;
+    cursor:pointer;
+}
+
+/* =========================
+   TOAST
+========================= */
+
+.toast{
+    position:fixed;
+    top:30px;
+    right:30px;
+
+    background:#111;
+    color:#fff;
+
+    padding:16px 24px;
+
+    border-radius:16px;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:0.4s;
+
+    z-index:99999;
+}
+
+.toast.show{
+    opacity:1;
+}
+
+/* =========================
+   TOP BUTTON
+========================= */
+
+.top-btn{
+    position:fixed;
+    bottom:30px;
+    right:30px;
+
+    width:58px;
+    height:58px;
+
+    border:none;
+    border-radius:50%;
+
+    background:#111;
+    color:#fff;
+
+    cursor:pointer;
+
+    display:none;
+
+    z-index:9999;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.booking-modal,
+.compare-modal{
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,0.5);
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:99999;
+}
+
+.booking-modal.active,
+.compare-modal.active{
+    display:flex;
+}
+
+.modal-content,
+.compare-content{
+    width:90%;
+    max-width:700px;
+
+    background:#fff;
+
+    padding:35px;
+
+    border-radius:26px;
+
+    position:relative;
+}
+
+.modal-content h2,
+.compare-content h2{
+    margin-bottom:22px;
+}
+
+.modal-content input{
+    width:100%;
+
+    padding:16px;
+
+    border-radius:16px;
+
+    border:1px solid #ddd;
+
+    margin-bottom:18px;
+
+    font-family:'Inter',sans-serif;
+}
+
+.modal-content button{
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+
+    background:#111;
+    color:#fff;
+
+    border-radius:16px;
+
+    cursor:pointer;
+}
+
+.close-modal,
+.close-compare{
+    position:absolute;
+    top:20px;
+    right:22px;
+
+    font-size:28px;
+
+    cursor:pointer;
+}
+
+/* =========================
+   COMPARE GRID
+========================= */
+
+.compare-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    margin-top:25px;
+}
+
+.compare-card{
+    background:#f5f5f5;
+    padding:20px;
+    border-radius:18px;
+}
+
+.compare-card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:14px;
+    margin-bottom:15px;
+}
+
+.compare-card h3{
+    margin-bottom:12px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+    margin-top:90px;
+
+    background:#111;
+    color:#fff;
+
+    padding:70px 10%;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:45px;
+}
+
+.footer p{
+    color:#ccc;
+    line-height:1.8;
+    margin-top:12px;
+}
+
+.footer-links{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+.footer-links h3{
+    margin-bottom:15px;
+}
+
+.footer-links a{
+    text-decoration:none;
+    color:#ccc;
+    transition:0.3s;
+}
+
+.footer-links a:hover{
+    color:#fff;
+}
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark{
+    background:#111;
+    color:#fff;
+}
+
+body.dark .navbar,
+body.dark .search-box,
+body.dark .search-suggestions,
+body.dark .sort-btn,
+body.dark .sort-dropdown,
+body.dark .car-card,
+body.dark .filter-sidebar,
+body.dark .mobile-menu,
+body.dark .modal-content,
+body.dark .compare-content{
+    background:#1b1b1b;
+    color:#fff;
+}
+
+body.dark .live-time{
+    color:#ccc;
+}
+
+body.dark .search-box input{
+    color:#fff;
+}
+
+body.dark .details-btn{
+    background:#333;
+    color:#fff;
+}
+
+body.dark .suggestion-item:hover,
+body.dark .sort-option:hover{
+    background:#333;
+}
+
+body.dark .wishlist-btn{
+    background:#222;
+}
+
+body.dark .modal-content input{
+    background:#222;
+    border:none;
+    color:#fff;
+}
+
+body.dark .compare-card{
+    background:#222;
+}
+
+body.dark .footer{
+    background:#000;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+    .navbar{
+        padding:20px;
+    }
+
+    .heading-section h1{
+        font-size:38px;
+    }
+
+    .heading-section p{
+        font-size:16px;
+    }
+
+    .cars-container{
+        grid-template-columns:1fr;
+    }
+
+    .footer{
+        grid-template-columns:1fr;
+        padding:60px 8%;
+    }
+
+    .filter-sidebar{
+        width:100%;
+    }
+
+    .compare-grid{
+        grid-template-columns:1fr;
+    }
+
+}
